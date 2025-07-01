@@ -1,0 +1,141 @@
+body {
+  width: 320px;
+  padding: 15px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  color: #000;
+  text-align: center;
+}
+
+h3 {
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  color: #555;
+}
+
+.account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+.account-item:hover {
+  background-color: #f5f5f5;
+}
+
+.account-item label {
+  cursor: pointer;
+}
+
+.share-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 8px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #1991db;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#cancel-sharing-btn {
+  margin-top: 10px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+#cancel-sharing-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.hidden {
+  display: none;
+}
+
+.sharing-loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1da1f2;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.status-message {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.status-message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-message.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.status-message.info {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-message.warning {
+  background-color: #fff8e1;
+  color: #f57f17;
+}

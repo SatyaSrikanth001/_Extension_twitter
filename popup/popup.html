@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>X Feed Viewer</title>
+  <link rel="stylesheet" href="popup.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    .container {
+      padding: 20px;
+      width: 300px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    h3 {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      color: #333;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin: 0.5rem 0;
+      box-sizing: border-box;
+    }
+    .account-item {
+      margin-bottom: 6px;
+    }
+    .sharing-loader {
+      width: 24px;
+      height: 24px;
+      border: 3px solid #ccc;
+      border-top: 3px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 10px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .hidden {
+      display: none;
+    }
+    .status-message {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .status-message.success {
+      color: green;
+    }
+    .status-message.error {
+      color: red;
+    }
+    .status-message.info {
+      color: #007bff;
+    }
+    .status-message.warning {
+      color: orange;
+    }
+    button {
+      padding: 8px 12px;
+      width: 100%;
+      margin-top: 0.5rem;
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>X Feed Viewer</h1>
+
+    <!-- Login Button -->
+    <button id="login-btn">Login with Twitter</button>
+
+    <!-- Switch Feed Section -->
+    <div class="account-switcher">
+      <h3>Switch Feed</h3>
+      <div class="account-list">
+        <div class="account-item" data-account-id="default">
+          <input type="radio" name="account" id="default" checked>
+          <label for="default">My Feed</label>
+        </div>
+        <!-- Additional accounts will be loaded here -->
+      </div>
+    </div>
+
+    <!-- Share Feed Section -->
+    <div class="share-section">
+      <h3>Share Your Current Feed</h3>
+      <input type="text" id="share-account-name" placeholder="Name this shared feed">
+      <button id="start-sharing-btn">Start Sharing</button>
+
+      <div id="sharing-status" class="hidden">
+        <p>Now visit X.com and refresh your feed to share it</p>
+        <div class="sharing-loader"></div>
+        <button id="cancel-sharing-btn">Cancel</button>
+      </div>
+    </div>
+
+    <!-- View Friend Feed Section -->
+    <div class="view-friend-section">
+      <h3>View Friend's Feed</h3>
+      <input id="friend-username" placeholder="@friend" type="text">
+      <button id="view-feed-btn">View Feed</button>
+    </div>
+
+    <!-- Status Message -->
+    <div class="status-message" id="status-message"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
